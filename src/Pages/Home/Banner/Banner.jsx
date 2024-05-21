@@ -16,6 +16,18 @@ const Banner = () => {
                 <img src="https://i.ibb.co/qFK4TJ7/tim-toomey-pe9dv-M1r-Qk-M-unsplash.jpg" />
 
             </div>
+            <div>
+                <img src="https://i.ibb.co/cwsSL0R/edward-franklin-Nb-Q-M3-Cdzg-unsplash.jpg" />
+
+            </div>
+            <div>
+                <img src="https://i.ibb.co/RBR97vV/lightscape-0-Bhs-N70-JVA8-unsplash.jpg" />
+
+            </div>
+            <div>
+                <img src="https://i.ibb.co/t4DGfd3/ella-olsson-fx-JTl-g-Dh28-unsplash.jpg" />
+
+            </div>
         </Carousel>
     );
 };
