@@ -1,13 +1,16 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
     const captchaRef = useRef()
     const [disabled, setDisabled] = useState(true)
     const { user, signIn } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -23,6 +26,9 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                Swal.fire("Login Successful");
+                navigate(location?.state ? location.state : ('/'))
+
                 console.log(user)
             })
 
@@ -76,7 +82,7 @@ const Login = () => {
                     </form>
 
                     <Link to='/signup'>
-                       <p className='text-lg font-semibold text-red-600 p-5'>New here!!! Create a new account</p>
+                        <p className='text-lg font-semibold text-red-600 p-5'>New here!!! Create a new account</p>
                     </Link>
                 </div>
             </div>
