@@ -27,7 +27,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 Swal.fire("Login Successful");
-                navigate(location?.state ? location.state : ('/'))
+                navigate('/')
 
                 console.log(user)
             })
@@ -71,13 +71,13 @@ const Login = () => {
                             <label className="label">
                                 <LoadCanvasTemplate />
                             </label>
-                            <input type="password" ref={captchaRef} name="captcha" placeholder="Type the captcha above" className="input input-bordered" required />
+                            <input type="password" ref={captchaRef} name="captcha" placeholder="Type the captcha above" className="input input-bordered" required disabled />
 
                             <button onClick={handleCaptcha} className="btn btn-outline btn-xs mt-2">Validate</button>
 
                         </div>
                         <div className="form-control mt-6">
-                            <input disabled={disabled} className="btn btn-primary text-white" type="submit" value="Login" />
+                            <input className="btn btn-primary text-white" type="submit" value="Login" />
                         </div>
                     </form>
 
